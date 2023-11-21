@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Nayef K. Excelsior",
-  description: "Excelsior studios portfolio",
+  title: "excelsior",
+  description: "A showcase of Nayef Kanaan's work, projects, and profile",
 };
 
 export default function RootLayout({
