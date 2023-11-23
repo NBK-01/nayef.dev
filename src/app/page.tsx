@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         </h1>
         <div className="flex space-x-6 mx-auto py-6">
           <Link href="https://github.com/NBK-01" className="underline">
-            github
+            <Button>github</Button>
           </Link>
           <Link href="https://x.com/excelsior_stu" className="underline">
             twitter/X
