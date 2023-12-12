@@ -1,8 +1,10 @@
+// "use client"
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/nav.components";
-import { ThemeProvider } from "@/components/layout/theme-provider";
+import { LowerNav, Navbar} from "@/components/layout/nav.components";
+import { ThemeProvider, UIProvider } from "@/components/layout/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,16 +20,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider
+      <body className="overflow-hidden" style={inter.style}>
+        <UIProvider>
+          <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          <LowerNav />
           <Navbar />
+          
           {children}
+          
         </ThemeProvider>
+        </UIProvider>
+
       </body>
     </html>
   );
