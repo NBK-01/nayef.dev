@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Button } from "../ui/button";
-import { ModeToggle } from "./theme-toggle";
+import { ModeToggle } from "../comps/theme-toggle";
 import { GitHubLogoIcon, TwitterLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { cn } from "@/lib/utils"
@@ -171,14 +171,14 @@ export const LowerNav = () => {
       <div className="flex items-center mx-auto justify-between">
         <Chip className="my-auto items-center" color="warning" variant="dot"> Home </Chip>
         <h1 className="italic"> excelsior - nayef kanaan </h1>
-        <div className="flex space-x-3 my-auto">
+        <div className="flex space-x-5 my-auto">
             <Link href="https://github.com/NBK-01" target="_blank">
               <GitHubLogoIcon className="h-[1.2rem] w-[1.2rem]"/>
             </Link>
             <Link href="https://x.com/excelsior_stu" target="_blank">
               <TwitterLogoIcon className="h-[1.2rem] w-[1.2rem]"/>
             </Link>
-            <Link href="" target="_blank">
+            <Link href="https://www.linkedin.com/in/nayef-kanaan-4aa1b1183/" target="_blank">
               <LinkedInLogoIcon className="h-[1.2rem] w-[1.2rem]"/>
             </Link>
           </div>
