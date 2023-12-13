@@ -149,17 +149,12 @@ ListItem.displayName = "ListItem"
 
 export const Navbar = () => {
   return (
-    <nav className="max-w-screen-xl mx-auto px-16 py-8">
+    <nav className="max-w-screen-xl mx-auto px-16 pt-8">
       <div className="flex items-center justify-between mx-auto">
         <NavigationMenuDemo/>
         <div className="flex">
         
         </div>
-       
-        
-         
-        
-
         <div className="flex space-x-5">
           <ModeToggle />
           {/* <Button variant="default"> about </Button> */}
