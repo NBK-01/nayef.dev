@@ -3,6 +3,8 @@ import styles from './css/page.module.css'
 import { useState } from 'react';
 import Project from '@/components/comps/project-list';
 import Modal from '@/components/comps/project-modal';
+import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 // interface Projects = {
 
@@ -45,17 +47,20 @@ export default function Home() {
   const [modal, setModal] = useState({active: false, index: 0})
 
   return (
-  <main className={styles.main}>
-    <div className={styles.body}>
-      {
-        projects.map( (project, index) => {
-          return <Project index={index} title={project.title} url={project.url as string} desc={project.desc} setModal={setModal} key={index}/>
-        })
-      }
-    </div>
-    
+    <>
+      <main className={styles.main}>
+        <div className={styles.body}>
+          {
+            projects.map( (project, index) => {
+              return <Project index={index} title={project.title} url={project.url as string} desc={project.desc} setModal={setModal} key={index}/>
+            })
+          }
+        </div>
+   
         <Modal modal={modal} projects={projects}/>
-      
-  </main>
+     
+      </main>
+    </>
+  
   )
 }

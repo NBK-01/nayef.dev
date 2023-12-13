@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client"
 
 import React from "react";
@@ -16,6 +17,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Chip } from "@nextui-org/react";
+import { toast } from "sonner";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -54,41 +56,47 @@ const components: { title: string; href: string; description: string }[] = [
       "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
   },
 ]
+ function copyFunc() {
+  navigator.clipboard.writeText("nbk01.dev@gmail.com")
 
-export function NavigationMenuDemo() {
+  toast.success("Copied to clipboard")
+}
+
+
+export function NavDropdown() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger> general </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <li className="row-span-3">
-                <NavigationMenuLink asChild>
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
-                  >
-                    
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
-                    </div>
-                    <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components built with Radix UI and
-                      Tailwind CSS.
-                    </p>
+            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
+              <ListItem href="/about" title="about">
+                more about me, my professional experience & what I do
+              </ListItem>
+              <ListItem href="/blog" title="Blog">
+                my take on things; technical, creative, and personal
+              </ListItem>
+              <div className="block select-none space-y-3 rounded-md p-3 leading-none no-underline outline-none transition-colors">
+                <p className='text-sm font-medium italic lowercase leading-none'> 
+                socials 
+                </p>
+                <div className="flex space-x-5 line-clamp-2 text-sm lowercase leading-snug text-green-500 underline">
+                  <Link href="https://x.com/excelsior_stu" target="_blank" className="hover:text-green-900">
+                      twitter/X
+                  </Link>
+                  <Link href="https://github.com/NBK-01" target="_blank" className="hover:text-green-900">
+                      github
+                  </Link>
+                  <Link href="https://www.linkedin.com/in/nayef-kanaan-4aa1b1183/" target="_blank" className="hover:text-green-900">
+                      linkedin
+                  </Link>
+                  <a className="hover:text-green-900 cursor-pointer" 
+                      onClick={() => copyFunc()}>
+                    email
                   </a>
-                </NavigationMenuLink>
-              </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
-              </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
-              </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
-              </ListItem>
+                </div>
+              </div>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
@@ -109,11 +117,13 @@ export function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              schedule a call
+          
+            <NavigationMenuLink style={{cursor: "pointer"}} asChild className={navigationMenuTriggerStyle()}>
+              <a href="https://cal.com/excelsior" target="_blank">
+                schedule a call
+              </a>
             </NavigationMenuLink>
-          </Link>
+          
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
@@ -149,41 +159,18 @@ ListItem.displayName = "ListItem"
 
 export const Navbar = () => {
   return (
-    <nav className="max-w-screen-xl mx-auto px-16 pt-8">
+    <nav className="max-w-screen-xl mx-auto px-16 pt-16 pb-12">
       <div className="flex items-center justify-between mx-auto">
-        <NavigationMenuDemo/>
-        <div className="flex">
+        <NavDropdown/>
+       
+        <h1 className="italic"> excelsior - nayef kanaan </h1>
         
-        </div>
         <div className="flex space-x-5">
+          <Chip className="my-auto items-center" color="warning" variant="dot"> Home </Chip>
           <ModeToggle />
-          {/* <Button variant="default"> about </Button> */}
         </div>
       </div>
     </nav>
     
   );
 };
-
-export const LowerNav = () => {
-  return(
-      <nav className="max-w-screen-xl mx-auto px-20 pt-8">
-      <div className="flex items-center mx-auto justify-between">
-        <Chip className="my-auto items-center" color="warning" variant="dot"> Home </Chip>
-        <h1 className="italic"> excelsior - nayef kanaan </h1>
-        <div className="flex space-x-5 my-auto">
-            <Link href="https://github.com/NBK-01" target="_blank">
-              <GitHubLogoIcon className="h-[1.2rem] w-[1.2rem]"/>
-            </Link>
-            <Link href="https://x.com/excelsior_stu" target="_blank">
-              <TwitterLogoIcon className="h-[1.2rem] w-[1.2rem]"/>
-            </Link>
-            <Link href="https://www.linkedin.com/in/nayef-kanaan-4aa1b1183/" target="_blank">
-              <LinkedInLogoIcon className="h-[1.2rem] w-[1.2rem]"/>
-            </Link>
-          </div>
-      </div>
-    </nav>  
-  )
-
-}
