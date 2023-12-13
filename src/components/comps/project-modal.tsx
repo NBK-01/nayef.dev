@@ -3,6 +3,7 @@ import gsap from "gsap"
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from '../../app/css/modal.module.css';
+import Link from 'next/link';
 
 interface modal {
     modal: any,
@@ -52,6 +53,7 @@ export default function Modal ({modal, projects}: modal) {
 
   return (
     <>
+        
         <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={styles.modalContainer}>
             <div style={{top: index * -100 + "%"}} className={styles.modalSlider}>
             {
@@ -69,9 +71,15 @@ export default function Modal ({modal, projects}: modal) {
             }
             </div>
         </motion.div>
-        <motion.div ref={cursor} className={styles.cursor} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
-
-        <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>View</motion.div>
+        <motion.div ref={cursor} className={styles.cursor} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>
+       
+        </motion.div>
+        
+          <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>
+                View
+            </motion.div>
+        
+            
     </>
   )
 }
