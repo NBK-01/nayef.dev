@@ -8,22 +8,26 @@ const projects = [
   {
     title: "Probably Xyz",
     src: "Prbly-Land.png",
-    color: "#5D31FF"
+    color: "#5D31FF",
+    desc: "Founded: Design and Development"
   },
   {
     title: "Mirathi",
     src: "Mirathi-Land.png",
-    color: "#3CB997"
+    color: "#3CB997",
+    desc: "Design & Development"
   },
   {
     title: "Kiwii",
     src: "Kiwii-Land.png",
-    color: "#16A34A"
+    color: "#16A34A",
+    desc: "Solo Founder"
   },
   {
     title: "Disruptor Ventures",
     src: "DV-Land.png",
-    color: "#4F7942"
+    color: "#4F7942",
+    desc: "Design and Development"
   }
 ]
 
@@ -36,7 +40,7 @@ export default function Home() {
     <div className={styles.body}>
       {
         projects.map( (project, index) => {
-          return <Project index={index} title={project.title} setModal={setModal} key={index}/>
+          return <Project index={index} title={project.title} desc={project.desc} setModal={setModal} key={index}/>
         })
       }
     </div>
