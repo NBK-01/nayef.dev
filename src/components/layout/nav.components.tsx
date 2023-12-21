@@ -21,44 +21,44 @@ import { toast } from "sonner";
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "ReadMe Generator",
-    href: "/docs/primitives/alert-dialog",
+    href: "https://github.com/NBK-01/ReadeMe-Generator",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "cli-based nodejs readme file generator",
   },
   {
-    title: "bookworm haven",
-    href: "/docs/primitives/hover-card",
+    title: "Bookworm haven",
+    href: "https://github.com/NBK-01/Bookworm-Haven",
     description:
-      "For sighted users to preview content available behind a link.",
+      "an platform where you can discuss, review, and search for novels",
   },
   {
     title: "Prbly V1",
-    href: "/docs/primitives/progress",
+    href: "https://github.com/Probably-xyz/Prbly-Alpha",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "first design & dev of prbly.xyz",
   },
   {
     title: "Mirathi V1",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    href: "https://mirathi-v2-8u7c4dawg-nbk-01.vercel.app/",
+    description: "first design and dev of mirathi.io",
   },
   {
     title: "Trail Finder",
-    href: "/docs/primitives/tabs",
+    href: "https://jyothybaby.github.io/Trail-Finder/",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "search for hiking trails within a selected radius relevant to your location ",
   },
   {
     title: "Employee manager sys",
-    href: "/docs/primitives/tooltip",
+    href: "https://github.com/NBK-01/Employee-Management-System",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "a terminal based CMS app which runs using mainly Inquirer and SQL",
   },
 ]
  function copyFunc() {
   navigator.clipboard.writeText("nbk01.dev@gmail.com")
 
-  toast.success("Copied to clipboard")
+  toast.success("Email copied to clipboard")
 }
 
 
