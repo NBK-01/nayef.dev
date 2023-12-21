@@ -5,10 +5,10 @@ import Project from '@/components/comps/project-list';
 import Modal from '@/components/comps/project-modal';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import Link from 'next/link';
 
-// interface Projects = {
 
-// }
+
 
 const projects = [
   {
@@ -45,7 +45,7 @@ const projects = [
 export default function Home() {
 
   const [modal, setModal] = useState({active: false, index: 0})
-
+  
   return (
     <>
       <main className={styles.main}>
@@ -60,6 +60,7 @@ export default function Home() {
         <Modal modal={modal} projects={projects}/>
      
       </main>
+      
     </>
   
   )
