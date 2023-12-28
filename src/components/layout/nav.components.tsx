@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-"use client"
+"use client";
 
 import React from "react";
 import { Button } from "../ui/button";
 import { ModeToggle } from "../comps/theme-toggle";
 import Link from "next/link";
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,7 +14,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 import { Chip } from "@nextui-org/react";
 import { toast } from "sonner";
 
@@ -22,8 +22,7 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: "ReadMe Generator",
     href: "https://github.com/NBK-01/ReadeMe-Generator",
-    description:
-      "cli-based nodejs readme file generator",
+    description: "cli-based nodejs readme file generator",
   },
   {
     title: "Bookworm haven",
@@ -34,8 +33,7 @@ const components: { title: string; href: string; description: string }[] = [
   {
     title: "Prbly V1",
     href: "https://github.com/Probably-xyz/Prbly-Alpha",
-    description:
-      "first design & dev of prbly.xyz",
+    description: "first design & dev of prbly.xyz",
   },
   {
     title: "Mirathi V1",
@@ -54,13 +52,12 @@ const components: { title: string; href: string; description: string }[] = [
     description:
       "a terminal based CMS app which runs using mainly Inquirer and SQL",
   },
-]
- function copyFunc() {
-  navigator.clipboard.writeText("nbk01.dev@gmail.com")
+];
+function copyFunc() {
+  navigator.clipboard.writeText("nbk01.dev@gmail.com");
 
-  toast.success("Email copied to clipboard")
+  toast.success("Email copied to clipboard");
 }
-
 
 export function NavDropdown() {
   return (
@@ -77,21 +74,35 @@ export function NavDropdown() {
                 my take on things; technical, creative, and personal
               </ListItem>
               <div className="block select-none space-y-3 rounded-md p-3 leading-none no-underline outline-none transition-colors">
-                <p className='text-sm font-medium italic lowercase leading-none'> 
-                socials 
+                <p className="text-sm font-medium italic lowercase leading-none">
+                  socials
                 </p>
                 <div className="flex space-x-5 line-clamp-2 text-sm lowercase leading-snug text-green-500 underline">
-                  <Link href="https://x.com/excelsior_stu" target="_blank" className="hover:text-green-900">
-                      twitter/X
+                  <Link
+                    href="https://x.com/excelsior_stu"
+                    target="_blank"
+                    className="hover:text-green-900"
+                  >
+                    twitter/X
                   </Link>
-                  <Link href="https://github.com/NBK-01" target="_blank" className="hover:text-green-900">
-                      github
+                  <Link
+                    href="https://github.com/NBK-01"
+                    target="_blank"
+                    className="hover:text-green-900"
+                  >
+                    github
                   </Link>
-                  <Link href="https://www.linkedin.com/in/nayef-kanaan-4aa1b1183/" target="_blank" className="hover:text-green-900">
-                      linkedin
+                  <Link
+                    href="https://www.linkedin.com/in/nayef-kanaan-4aa1b1183/"
+                    target="_blank"
+                    className="hover:text-green-900"
+                  >
+                    linkedin
                   </Link>
-                  <a className="hover:text-green-900 cursor-pointer" 
-                      onClick={() => copyFunc()}>
+                  <a
+                    className="hover:text-green-900 cursor-pointer"
+                    onClick={() => copyFunc()}
+                  >
                     email
                   </a>
                 </div>
@@ -116,17 +127,19 @@ export function NavDropdown() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          
-            <NavigationMenuLink style={{cursor: "pointer"}} asChild className={navigationMenuTriggerStyle()}>
-              <a href="https://cal.com/excelsior" target="_blank">
-                schedule a call
-              </a>
-            </NavigationMenuLink>
-          
+          <NavigationMenuLink
+            style={{ cursor: "pointer" }}
+            asChild
+            className={navigationMenuTriggerStyle()}
+          >
+            <a href="https://cal.com/excelsior" target="_blank">
+              schedule a call
+            </a>
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  )
+  );
 }
 
 const ListItem = React.forwardRef<
@@ -144,32 +157,36 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium italic lowercase leading-none">{title}</div>
+          <div className="text-sm font-medium italic lowercase leading-none">
+            {title}
+          </div>
           <p className="line-clamp-2 text-sm lowercase leading-snug text-muted-foreground">
             {children}
           </p>
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
-
+  );
+});
+ListItem.displayName = "ListItem";
 
 export const Navbar = () => {
   return (
     <nav className="max-w-screen-xl mx-auto px-16 pt-16 pb-12">
       <div className="flex items-center justify-between mx-auto">
-        <NavDropdown/>
-       
-        <h1 className="italic"> excelsior - nayef kanaan </h1>
-        
+        <NavDropdown />
+        <Link href="/">
+          <h1 className="italic">excelsior - nayef kanaan</h1>
+        </Link>
+
         <div className="flex space-x-5">
-          <Chip className="my-auto items-center" color="warning" variant="dot"> Home </Chip>
+          <Chip className="my-auto items-center" color="warning" variant="dot">
+            {" "}
+            Home{" "}
+          </Chip>
           <ModeToggle />
         </div>
       </div>
     </nav>
-    
   );
 };
