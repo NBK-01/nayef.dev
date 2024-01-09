@@ -79,11 +79,11 @@ export function NavDropdown() {
                 </p>
                 <div className="flex space-x-5 line-clamp-2 text-sm lowercase leading-snug text-green-500 underline">
                   <Link
-                    href="https://x.com/excelsior_stu"
+                    href="https://x.com/NBK_dev"
                     target="_blank"
                     className="hover:text-green-900"
                   >
-                    twitter/X
+                    X
                   </Link>
                   <Link
                     href="https://github.com/NBK-01"
