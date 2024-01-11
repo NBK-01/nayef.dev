@@ -172,13 +172,13 @@ ListItem.displayName = "ListItem";
 
 export const Navbar = () => {
   return (
-    <nav className="max-w-screen-lg mx-auto px-16 pt-16 pb-12">
+    <nav className="max-w-screen-xl mx-auto px-16 pt-16 pb-12 sticky">
       <div className="flex items-center justify-between mx-auto">
         <NavDropdown />
         <div className="flex space-x-5">
-          {/* <Chip className="my-auto items-center" color="warning" variant="dot">
-            Home
-          </Chip> */}
+          <Link className="my-auto items-center italic"  href="/">
+            home
+          </Link>
           <ModeToggle />
         </div>
       </div>

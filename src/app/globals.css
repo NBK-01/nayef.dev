@@ -74,3 +74,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+::-moz-selection { /* Code for Firefox */
+  color: goldenrod;
+  background: rgb(20, 83, 45, 1);
+}
+
+::selection {
+  color: goldenrod;
+  background: rgb(20, 83, 45, 1);
+}
