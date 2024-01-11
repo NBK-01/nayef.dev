@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="overflow-hidden" style={inter.style}>
+      <body className="" style={inter.style}>
         <UIProvider>
           <ThemeProvider
             attribute="class"
