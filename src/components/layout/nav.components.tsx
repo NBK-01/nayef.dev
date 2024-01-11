@@ -176,13 +176,12 @@ export const Navbar = () => {
       <div className="flex items-center justify-between mx-auto">
         <NavDropdown />
         <Link href="/">
-          <h1 className="italic">excelsior - nayef kanaan</h1>
+          <h1 className="italic">nayef kanaan</h1>
         </Link>
 
         <div className="flex space-x-5">
           <Chip className="my-auto items-center" color="warning" variant="dot">
-            {" "}
-            Home{" "}
+            Home
           </Chip>
           <ModeToggle />
         </div>
