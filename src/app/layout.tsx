@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/layout/nav.components";
 import { ThemeProvider, UIProvider } from "@/components/layout/providers";
 import { Toaster } from "sonner";
 
@@ -28,7 +27,6 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Toaster position="top-center" richColors />
-            <Navbar />
             {children}
           </ThemeProvider>
         </UIProvider>
