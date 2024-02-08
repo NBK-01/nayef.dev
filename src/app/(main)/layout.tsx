@@ -4,6 +4,7 @@ import "../globals.css";
 import { ThemeProvider, UIProvider } from "@/components/layout/providers";
 import { Toaster } from "sonner";
 import { Nav } from "@/components/layout/nav.components";
+import { BackToTop } from "@/components/comps/links";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +29,10 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <Toaster position="bottom-right" richColors />
-            <Nav/>
+            <div id="top">
+              <Nav />
+            </div>
+            <BackToTop/>
             <main className="mx-auto max-w-screen-md">
               {children}
             </main>
