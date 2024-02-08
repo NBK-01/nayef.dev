@@ -1,22 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import React from "react";
-import { Button } from "../ui/button";
-import { ModeToggle } from "../comps/theme-toggle";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { Chip } from "@nextui-org/react";
+import React from "react";
 import { toast } from "sonner";
+import { NavLinks } from "../comps/links";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -59,4 +47,31 @@ function copyFunc() {
   toast.success("Email copied to clipboard");
 }
 
+
+export const Nav = () => {
+  return (
+      <header className="max-w-screen-md flex mx-auto justify-between py-24">
+        <div className="flex space-x-3">
+          <Link href="/" className="text-neutral-600 italic">
+            <NavLinks name="nayef.dev"/>
+          </Link>
+          <span className="text-neutral-400"> / </span>
+          <Link href="" className="text-neutral-500 italic">
+            <NavLinks name="projects"/>
+          </Link>
+          {/* <span className="text-slate-400 mr-1"> / </span> */}
+          
+        </div>
+
+        <div className="space-x-4">
+          <Link href="/posts/post-01.md" className="text-neutral-500 italic">
+            <NavLinks name="this"/>
+          </Link>
+          <Link href="" className="text-neutral-500 italic">
+            <NavLinks name="tools"/>
+          </Link>
+        </div>
+    </header>
+  )
+}
 
