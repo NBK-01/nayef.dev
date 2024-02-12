@@ -23,7 +23,7 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-6",
         className
       )}
     >
@@ -54,7 +54,7 @@ export const HoverEffect = ({
           <Card> 
             <CardTitle className="my-auto">{item.title} </CardTitle>
             <CardDescription>{item.description}</CardDescription>
-            <CardLinks className="mt-4" linkOne={item.linkOne} linkTwo={item.linkTwo}/> 
+            <CardLinks className="mt-3" linkOne={item.linkOne} linkTwo={item.linkTwo}/> 
           </Card>
         </div>
       ))}
@@ -90,9 +90,9 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-neutral-700 tracking-wide", className)}>
+    <h6 className={cn("text-neutral-700 tracking-wide", className)}>
       {children}
-    </h4>
+    </h6>
   );
 };
 export const CardDescription = ({
@@ -105,7 +105,7 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "text-neutral-400 tracking-wide leading-relaxed text-sm mt-3",
+        "text-neutral-400 tracking-wide leading-relaxed text-xs mt-3",
         className
       )}
     >
@@ -123,28 +123,63 @@ export const CardLinks = ({
     linkOne?: string;
     linkTwo?: string;
   }) => {
-    return (
-      <div
-        className={cn(
-          "flex space-x-5",
-          className
-        )}
-      >
-         {linkOne ?
-          <Link href={linkOne} className="text-neutral-500" target="_blank">
-            <ExternalLink name="preview"/>
-          </Link> 
-          :
-          <p className="text-neutral-500">na</p>
-        }
-        {linkTwo ?
-          <Link href={linkTwo} className="text-neutral-500" target="_blank">
+    if (linkOne && linkTwo){
+      return (
+        <div
+          className={cn(
+            "flex space-x-5",
+            className
+          )}
+        >
+            <Link href={linkOne as string} className="text-neutral-500" target="_blank">
+              <ExternalLink name="preview"/>
+            </Link> 
+           
+            <Link href={linkTwo as string} className="text-neutral-500" target="_blank">
             <ExternalLink name="source"/>
-          </Link> 
-          :
-          <p className="text-neutral-500">na</p>
-        }
-       
-      </div>
-    );
+          </Link>   
+        </div>
+      );
+    }else if (linkOne && !linkTwo){
+     return ( 
+     <div
+      className={cn(
+        "flex space-x-5",
+        className
+      )}
+    >
+        <Link href={linkOne as string} className="text-neutral-500" target="_blank">
+          <ExternalLink name="preview"/>
+        </Link> 
+      
+    </div>
+    ) 
+    }else if (!linkOne && linkTwo) {
+      return ( 
+        <div
+         className={cn(
+           "flex space-x-5",
+           className
+         )}
+       >
+          
+          <Link href={linkTwo as string} className="text-neutral-500" target="_blank">
+            <ExternalLink name="source"/>
+          </Link>   
+         
+       </div>
+       ) 
+    }else 
+      return ( 
+        <div
+         className={cn(
+           "flex space-x-5",
+           className
+         )}
+       >
+         
+       </div>
+       ) 
+    
+   
   };

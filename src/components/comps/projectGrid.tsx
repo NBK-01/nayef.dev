@@ -7,35 +7,35 @@ export const projects = [
     {
       title: "prbly",
       description:
-        "founded, designed, and developed prbly. a platform for founders to connect with investors",
+        "founded, designed, and developed prbly.",
       linkOne: "https://prbly.xyz",
       linkTwo: ""
     },
     {
       title: "mirathi",
       description:
-        "redesign -- landing page built with framer-motion, gsap, nextjs & tailwind",
+        "landing page built with framer-motion, gsap & nextjs",
       linkOne: "https://mirathi.co",
       linkTwo: "",
-  },
+    },
     {
         title: "prbly (beta)",
         description:
-          "invite-only startup gallery - first version of prbly designed & developed",
+          "first version of prbly designed & developed",
         linkOne: "",
         linkTwo: "https://github.com/Probably-xyz/gallery",
     },
     {
         title: "disruptor ventures",
         description:
-          "marketing landing page built with gsap, threejs, html, css, js, & parcel",
+          "landing page built with gsap, threejs, js",
         linkOne: "https://disruptor.ventures",
         linkTwo: "",
     },
     {
         title: "orsus (wip)",
         description:
-          "an easy-to-use admin template repo built with nextjs14, tailwind, nextui, & kinde",
+          "nextjs, tailwind & kinde admin template",
         linkOne: "",
         linkTwo: "",
     },

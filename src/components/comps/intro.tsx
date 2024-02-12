@@ -3,6 +3,8 @@
 
 import React from 'react'
 import { ArrowLink } from './links';
+import { main } from '@/lib/fonts';
+import TechBadge from './badges';
 
 export const Intro = () => {
     const handleClickScroll = () => {
@@ -13,9 +15,10 @@ export const Intro = () => {
       };
     return (
         <>
-        <div className="pb-20 pt-10">
-        <h1 className="animate-text-gradient bg-gradient-to-r from-emerald-800 via-emerald-900 to-emerald-600 bg-[200%_auto] bg-clip-text text-4xl text-transparent mb-5 h-full"> 
-            main title and  introduction two or three navigation animations
+        <div className="pb-24 pt-14">
+        <h1 style={main.style} className="animate-text-gradient bg-gradient-to-r from-emerald-800 via-emerald-900 to-emerald-700 bg-[200%_auto] bg-clip-text text-3xl text-transparent mb-5 h-full"> 
+            nayef kanaan - fullstack developer
+            <br/> <span className="text-xl" > designing & building products </span>
         </h1>
         
         <a onClick={() => handleClickScroll()}>
@@ -27,12 +30,12 @@ export const Intro = () => {
     
       </div>
         <div className="pb-24 flex flex-col space-y-12">
-            <p className=" text-neutral-400 text-lg font-light"> 
+            <span className=" text-neutral-400 text-base font-light"> 
+                 what i'm doing now and <TechBadge techLink='https://nextjs.org' content="Nextjs"/> what i'm using and and what the plan is with small badges and what the plan is with small badges lan is with 
+            </span>
+            <span className=" text-neutral-400 text-base font-light"> 
                 longer parapgraph - about description. tools. what i'm doing now more personal maybe text shiny hover aswell
-            </p>
-            <p className=" text-neutral-400 text-lg font-light"> 
-                 what i'm doing now and what i'm using and and what the plan is with small badges and what the plan is with small badges lan is with
-            </p>
+            </span>
         </div>
    </>
     )

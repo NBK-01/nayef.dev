@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider, UIProvider } from "@/components/layout/providers";
 import { Toaster } from "sonner";
-import { Nav } from "@/components/layout/nav.components";
+import { ContactFooter, Nav } from "@/components/layout/nav.components";
 import { BackToTop } from "@/components/comps/links";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="" style={inter.style}>
+    <html lang="en" suppressHydrationWarning>
+      <body className="overflow-x-hidden" style={inter.style}>
         <UIProvider>
           <ThemeProvider
             attribute="class"
@@ -28,7 +28,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Toaster position="bottom-right" richColors />
+            <Toaster position="top-center" richColors />
             <div id="top">
               <Nav />
             </div>
@@ -36,6 +36,9 @@ export default function RootLayout({
             <main className="mx-auto max-w-screen-md">
               {children}
             </main>
+            <div id="contacts">
+              <ContactFooter/>
+            </div>
           </ThemeProvider>
         </UIProvider>
       </body>
