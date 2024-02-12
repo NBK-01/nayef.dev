@@ -5,6 +5,7 @@ import React from 'react'
 import { ArrowLink } from './links';
 import { main } from '@/lib/fonts';
 import TechBadge from './badges';
+import Link from 'next/link';
 
 export const Intro = () => {
     const handleClickScroll = () => {
@@ -14,29 +15,39 @@ export const Intro = () => {
         }
       };
     return (
-        <>
-        <div className="pb-24 pt-14">
-        <h1 style={main.style} className="animate-text-gradient bg-gradient-to-r from-emerald-800 via-emerald-900 to-emerald-700 bg-[200%_auto] bg-clip-text text-3xl text-transparent mb-5 h-full"> 
-            nayef kanaan - fullstack developer
-            <br/> <span className="text-xl" > designing & building products </span>
-        </h1>
-        
-        <a onClick={() => handleClickScroll()}>
-            <ArrowLink name="connect"/>
-        </a>
-
+      <>
+        <div className="pb-10 pt-14">
+          <h1 style={main.style} className="text-3xl text-neutral-600 font-light mb-5 h-full"> 
+              nayef kanaan - fullstack developer
+              <br/> <span className="text-xl" > designing & building products </span>
+          </h1>
+          <a onClick={() => handleClickScroll()}>
+              <ArrowLink name="connect"/>
+          </a>
+        </div>
 
        
-    
-      </div>
-        <div className="pb-24 flex flex-col space-y-12">
+         
+          <div className="flex space-x-3">
+                <TechBadge content="Nextjs" logo="/nextjs.svg"/> 
+                <TechBadge content="React" logo="/react.svg"/>
+                <TechBadge content="Postgresql" logo="/postgresql.svg"/> 
+                <TechBadge content="Tailwind" logo="/tailwind.svg"/>
+                <TechBadge content="Typescript" logo="/typescript.svg"/> 
+          </div>
+        
+
+        <div className="py-24 flex flex-col space-y-12">
             <span className=" text-neutral-400 text-base font-light"> 
-                 what i'm doing now and <TechBadge techLink='https://nextjs.org' content="Nextjs"/> what i'm using and and what the plan is with small badges and what the plan is with small badges lan is with 
+                 ive been desiging and building websites for three years now. working freelance, learning, and founding my own projects.
+                 also working at <Link href="https://techgenies.com" className="text-emerald-700 underline underline-offset-4">techgenies</Link> as a frontend dev in the infrastructure department as well as <Link href="https://borninteractive.com" className="text-emerald-700 underline underline-offset-4">born interactive</Link> as a frontend intern
+                
             </span>
-            <span className=" text-neutral-400 text-base font-light"> 
-                longer parapgraph - about description. tools. what i'm doing now more personal maybe text shiny hover aswell
+            <span className="text-neutral-400 text-base font-light"> 
+                today - my main focus is working more on open source, learning more, writing, and building products for the community such as <Link href="https://prbly.xyz" className="text-emerald-700 underline underline-offset-4">prbly</Link>
             </span>
         </div>
-   </>
+      </>
     )
 }
+

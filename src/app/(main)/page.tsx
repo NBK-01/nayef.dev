@@ -48,14 +48,14 @@ const Main = () => {
 
       <div className="pb-14 flex flex-col">
         <h1 className="text-neutral-700 text-2xl ml-2">
-          recent work
+        <span className="text-emerald-700 text-base"> (recent) </span> projects
         </h1>
         <ProjectGrid/>
       </div>
 
       <div className="pb-28 flex flex-col">
           <h1 className="text-neutral-700 text-2xl ml-2">
-            <span className="text-emerald-700 text-lg"> (more) </span>projects 
+            <span className="text-emerald-700 text-base"> (more) </span> projects 
           </h1>
           <ProjectList items={projects}/>
       </div>
