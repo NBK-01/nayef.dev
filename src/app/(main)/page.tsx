@@ -4,7 +4,7 @@ import ProjectGrid from '@/components/comps/projectGrid'
 import {ProjectList} from '@/components/comps/projectList'
 import { Separator } from '@/components/ui/separator';
 
-export const projects = [
+const projects = [
   {
     title: "readme generator",
     link: "https://github.com/NBK-01/ReadeMe-Generator",
