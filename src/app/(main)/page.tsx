@@ -17,7 +17,7 @@ const projects = [
       "an platform where you can discuss, review, and search for novels",
   },
   {
-    title: "prbly v1",
+    title: "prbly alpha",
     link: "https://github.com/Probably-xyz/Prbly-Alpha",
     sub: "first design & dev of prbly.xyz",
   },

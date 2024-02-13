@@ -44,16 +44,19 @@ export const ContactFooter = () => {
   return (
     <footer className='max-w-screen-md flex mx-auto justify-between py-10 border-neutral-600'>
        <div className="flex space-x-3">
-          <Link href="/" className="text-neutral-500 italic">
+          <Link href="https://github.com/NBK-01" target="_blank" className="text-neutral-500 italic">
             <NavLinks name="github"/>
           </Link>
+
           <span className="text-neutral-400"> / </span>
-          <Link href="/" className="text-neutral-500 italic">
+
+          <Link href="https://www.linkedin.com/in/nayef-kanaan-4aa1b1183/"  target="_blank" className="text-neutral-500 italic">
             <NavLinks name="linkedin"/>
           </Link>
+
           <span className="text-neutral-400"> / </span>
           
-          <Link href="" className="text-neutral-500 italic">
+          <Link href="https://twitter.com/NBK_dev" target="_blank" className="text-neutral-500 italic">
             <NavLinks name="X"/>
           </Link>  
         </div>
@@ -66,7 +69,7 @@ export const ContactFooter = () => {
           <Link href="/" className="text-neutral-500 italic">
             <NavLinks name="resume"/>
           </Link>
-          <Link href="https://cal.com/excelsior" className="text-neutral-500 italic">
+          <Link href="https://cal.com/excelsior" target="_blank" className="text-neutral-500 italic">
             <NavLinks name="book call"/>
           </Link>
           
