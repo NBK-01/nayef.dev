@@ -33,7 +33,7 @@ export default function RootLayout({
               <Nav />
             </div>
             <BackToTop/>
-            <main className="mx-auto max-w-screen-md">
+            <main className="mx-auto max-w-screen-md lg:px-0 px-8">
               {children}
             </main>
             <div id="contacts">

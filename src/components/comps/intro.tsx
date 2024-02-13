@@ -28,7 +28,7 @@ export const Intro = () => {
 
        
          
-          <div className="flex space-x-3">
+          <div className="hidden space-x-3 sm:flex">
                 <TechBadge content="Nextjs" logo="/nextjs.svg"/> 
                 <TechBadge content="React" logo="/react.svg"/>
                 <TechBadge content="Postgresql" logo="/postgresql.svg"/> 
@@ -36,6 +36,17 @@ export const Intro = () => {
                 <TechBadge content="Typescript" logo="/typescript.svg"/> 
           </div>
         
+          <div className="flex flex-col sm:hidden space-y-4">
+              <div className="flex space-x-3">
+                <TechBadge content="Nextjs" logo="/nextjs.svg"/> 
+                <TechBadge content="React" logo="/react.svg"/>
+                <TechBadge content="Postgresql" logo="/postgresql.svg"/> 
+              </div>
+              <div className="flex space-x-3">
+                <TechBadge content="Tailwind" logo="/tailwind.svg"/>
+                <TechBadge content="Typescript" logo="/typescript.svg"/> 
+              </div>
+          </div>
 
         <div className="py-24 flex flex-col space-y-12">
             <span className=" text-neutral-400 text-base font-light"> 

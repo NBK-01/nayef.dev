@@ -16,7 +16,7 @@ function copyFunc() {
 
 export const Nav = () => {
   return (
-      <header className="max-w-screen-md flex mx-auto justify-between pt-24 pb-14">
+      <header className="sm:max-w-screen-md max-w-[400px] flex mx-auto justify-between pt-24 pb-14 lg:px-0 px-8">
         <div className="flex space-x-3">
           <Link href="/" className="text-neutral-600 italic">
             <NavLinks name="nayef.dev"/>
@@ -42,7 +42,7 @@ export const Nav = () => {
 
 export const ContactFooter = () => {
   return (
-    <footer className='max-w-screen-md flex mx-auto justify-between py-10 border-neutral-600'>
+    <footer className='sm:max-w-screen-md max-w-[400px] px-8 lg:px-0 flex sm:flex-row flex-col sm:space-y-0 space-y-3 mx-auto justify-between py-10 border-neutral-600'>
        <div className="flex space-x-3">
           <Link href="https://github.com/NBK-01" target="_blank" className="text-neutral-500 italic">
             <NavLinks name="github"/>
@@ -62,10 +62,10 @@ export const ContactFooter = () => {
         </div>
 
         <div className="space-x-4">
-         
           <a onClick={() => copyFunc()} className="text-neutral-500 italic cursor-pointer">
             <NavLinks name="email"/>
           </a>
+          {/* todo */}
           <Link href="/" className="text-neutral-500 italic">
             <NavLinks name="resume"/>
           </Link>

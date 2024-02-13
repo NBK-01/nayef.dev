@@ -47,7 +47,7 @@ const Main = () => {
       <Intro/>
 
       <div className="pb-14 flex flex-col">
-        <h1 className="text-neutral-700 text-2xl ml-2">
+        <h1 className="text-neutral-700 md:text-2xl text-xl ml-2">
         <span className="text-emerald-700 text-base"> (recent) </span> projects
         </h1>
         <ProjectGrid/>
