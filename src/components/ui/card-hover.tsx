@@ -3,8 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { ExternalLink } from "../comps/links";
-import { Badge } from "./badge";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 export const HoverEffect = ({
   items,
@@ -51,10 +49,14 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card> 
+          <Card>
             <CardTitle className="my-auto">{item.title} </CardTitle>
             <CardDescription>{item.description}</CardDescription>
-            <CardLinks className="mt-3" linkOne={item.linkOne} linkTwo={item.linkTwo}/> 
+            <CardLinks
+              className="mt-3"
+              linkOne={item.linkOne}
+              linkTwo={item.linkTwo}
+            />
           </Card>
         </div>
       ))}
@@ -115,71 +117,57 @@ export const CardDescription = ({
 };
 
 export const CardLinks = ({
-    className,
-    linkOne,
-    linkTwo,
-  }: {
-    className?: string;
-    linkOne?: string;
-    linkTwo?: string;
-  }) => {
-    if (linkOne && linkTwo){
-      return (
-        <div
-          className={cn(
-            "flex space-x-5",
-            className
-          )}
+  className,
+  linkOne,
+  linkTwo,
+}: {
+  className?: string;
+  linkOne?: string;
+  linkTwo?: string;
+}) => {
+  if (linkOne && linkTwo) {
+    return (
+      <div className={cn("flex space-x-5", className)}>
+        <Link
+          href={linkOne as string}
+          className="text-neutral-500"
+          target="_blank"
         >
-            <Link href={linkOne as string} className="text-neutral-500" target="_blank">
-              <ExternalLink name="preview"/>
-            </Link> 
-           
-            <Link href={linkTwo as string} className="text-neutral-500" target="_blank">
-            <ExternalLink name="source"/>
-          </Link>   
-        </div>
-      );
-    }else if (linkOne && !linkTwo){
-     return ( 
-     <div
-      className={cn(
-        "flex space-x-5",
-        className
-      )}
-    >
-        <Link href={linkOne as string} className="text-neutral-500" target="_blank">
-          <ExternalLink name="preview"/>
-        </Link> 
-      
-    </div>
-    ) 
-    }else if (!linkOne && linkTwo) {
-      return ( 
-        <div
-         className={cn(
-           "flex space-x-5",
-           className
-         )}
-       >
-          
-          <Link href={linkTwo as string} className="text-neutral-500" target="_blank">
-            <ExternalLink name="source"/>
-          </Link>   
-         
-       </div>
-       ) 
-    }else 
-      return ( 
-        <div
-         className={cn(
-           "flex space-x-5",
-           className
-         )}
-       >
-         
-       </div>
-       ) 
-    
-   
-  };
+          <ExternalLink name="preview" />
+        </Link>
+
+        <Link
+          href={linkTwo as string}
+          className="text-neutral-500"
+          target="_blank"
+        >
+          <ExternalLink name="source" />
+        </Link>
+      </div>
+    );
+  } else if (linkOne && !linkTwo) {
+    return (
+      <div className={cn("flex space-x-5", className)}>
+        <Link
+          href={linkOne as string}
+          className="text-neutral-500"
+          target="_blank"
+        >
+          <ExternalLink name="preview" />
+        </Link>
+      </div>
+    );
+  } else if (!linkOne && linkTwo) {
+    return (
+      <div className={cn("flex space-x-5", className)}>
+        <Link
+          href={linkTwo as string}
+          className="text-neutral-500"
+          target="_blank"
+        >
+          <ExternalLink name="source" />
+        </Link>
+      </div>
+    );
+  } else return <div className={cn("flex space-x-5", className)}></div>;
+};

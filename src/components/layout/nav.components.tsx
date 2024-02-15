@@ -12,6 +12,10 @@ function copyFunc() {
   toast.success("Email copied to clipboard");
 }
 
+function soon() {
+  toast.warning("Coming soon");
+}
+
 export const Nav = () => {
   return (
     <header className="sm:max-w-screen-md max-w-[400px] flex mx-auto justify-between pt-24 pb-14 lg:px-0 px-8">
@@ -20,18 +24,18 @@ export const Nav = () => {
           <NavLinks name="nayef.dev" />
         </Link>
         <span className="text-neutral-400"> / </span>
-        <Link href="/" className="text-neutral-500 italic">
+        <a onClick={() => soon()} className="text-neutral-500 italic">
           <NavLinks name="projects" />
-        </Link>
+        </a>
       </div>
 
       <div className="space-x-4">
-        <Link href="/" className="text-neutral-500 italic">
+        <Link href="https://github.com/NBK-01/nayef.dev" className="text-neutral-500 italic">
           <NavLinks name="this" />
         </Link>
-        <Link href="/" className="text-neutral-500 italic">
+        {/* <a className="text-neutral-500 italic">
           <NavLinks name="tools" />
-        </Link>
+        </a> */}
       </div>
     </header>
   );
