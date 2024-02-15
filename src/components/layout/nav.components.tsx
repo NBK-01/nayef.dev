@@ -1,187 +1,98 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import React from "react";
-import { Button } from "../ui/button";
-import { ModeToggle } from "../comps/theme-toggle";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { Chip } from "@nextui-org/react";
+import React from "react";
 import { toast } from "sonner";
+import { NavLinks } from "../comps/links";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "ReadMe Generator",
-    href: "https://github.com/NBK-01/ReadeMe-Generator",
-    description: "cli-based nodejs readme file generator",
-  },
-  {
-    title: "Bookworm haven",
-    href: "https://github.com/NBK-01/Bookworm-Haven",
-    description:
-      "an platform where you can discuss, review, and search for novels",
-  },
-  {
-    title: "Prbly V1",
-    href: "https://github.com/Probably-xyz/Prbly-Alpha",
-    description: "first design & dev of prbly.xyz",
-  },
-  {
-    title: "Mirathi V1",
-    href: "https://mirathi-v2-8u7c4dawg-nbk-01.vercel.app/",
-    description: "first design and dev of mirathi.io",
-  },
-  {
-    title: "Trail Finder",
-    href: "https://jyothybaby.github.io/Trail-Finder/",
-    description:
-      "search for hiking trails within a selected radius relevant to your location ",
-  },
-  {
-    title: "Employee manager sys",
-    href: "https://github.com/NBK-01/Employee-Management-System",
-    description:
-      "a terminal based CMS app which runs using mainly Inquirer and SQL",
-  },
-];
 function copyFunc() {
   navigator.clipboard.writeText("nbk01.dev@gmail.com");
 
   toast.success("Email copied to clipboard");
 }
 
-export function NavDropdown() {
-  return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger> general </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px]">
-              <ListItem href="/about" title="about">
-                more about me, my professional experience & what I do
-              </ListItem>
-              <ListItem href="/blog" title="Blog">
-                my take on things; technical, creative, and personal
-              </ListItem>
-              <div className="block select-none space-y-3 rounded-md p-3 leading-none no-underline outline-none transition-colors">
-                <p className="text-sm font-medium italic lowercase leading-none">
-                  socials
-                </p>
-                <div className="flex space-x-5 line-clamp-2 text-sm lowercase leading-snug text-green-500 underline">
-                  <Link
-                    href="https://x.com/NBK_dev"
-                    target="_blank"
-                    className="hover:text-green-900"
-                  >
-                    X
-                  </Link>
-                  <Link
-                    href="https://github.com/NBK-01"
-                    target="_blank"
-                    className="hover:text-green-900"
-                  >
-                    github
-                  </Link>
-                  <Link
-                    href="https://www.linkedin.com/in/nayef-kanaan-4aa1b1183/"
-                    target="_blank"
-                    className="hover:text-green-900"
-                  >
-                    linkedin
-                  </Link>
-                  <a
-                    className="hover:text-green-900 cursor-pointer"
-                    onClick={() => copyFunc()}
-                  >
-                    email
-                  </a>
-                </div>
-              </div>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger> projects </NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink
-            style={{ cursor: "pointer" }}
-            asChild
-            className={navigationMenuTriggerStyle()}
-          >
-            <a href="https://cal.com/excelsior" target="_blank">
-              schedule a call
-            </a>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-  );
+function soon() {
+  toast.warning("Coming soon");
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+export const Nav = () => {
   return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium italic lowercase leading-none">
-            {title}
-          </div>
-          <p className="line-clamp-2 text-sm lowercase leading-snug text-muted-foreground">
-            {children}
-          </p>
+    <header className="sm:max-w-screen-md max-w-[400px] flex mx-auto justify-between pt-24 pb-14 lg:px-0 px-8">
+      <div className="flex space-x-3">
+        <Link href="/" className="text-neutral-600 italic">
+          <NavLinks name="nayef.dev" />
+        </Link>
+        <span className="text-neutral-400"> / </span>
+        <a onClick={() => soon()} className="text-neutral-500 italic">
+          <NavLinks name="projects" />
         </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";
-
-export const Navbar = () => {
-  return (
-    <nav className="max-w-screen-xl mx-auto px-16 pt-16 pb-12 sticky">
-      <div className="flex items-center justify-between mx-auto">
-        <NavDropdown />
-        <div className="flex space-x-5">
-          <Link className="my-auto items-center italic"  href="/">
-            home
-          </Link>
-          <ModeToggle />
-        </div>
       </div>
-    </nav>
+
+      <div className="space-x-4">
+        <Link href="https://github.com/NBK-01/nayef.dev" className="text-neutral-500 italic">
+          <NavLinks name="this" />
+        </Link>
+        {/* <a className="text-neutral-500 italic">
+          <NavLinks name="tools" />
+        </a> */}
+      </div>
+    </header>
+  );
+};
+
+export const ContactFooter = () => {
+  return (
+    <footer className="sm:max-w-screen-md max-w-[400px] px-8 lg:px-0 flex sm:flex-row flex-col sm:space-y-0 space-y-3 mx-auto justify-between py-10 border-neutral-600">
+      <div className="flex space-x-3">
+        <Link
+          href="https://github.com/NBK-01"
+          target="_blank"
+          className="text-neutral-500 italic"
+        >
+          <NavLinks name="github" />
+        </Link>
+
+        <span className="text-neutral-400"> / </span>
+
+        <Link
+          href="https://www.linkedin.com/in/nayef-kanaan-4aa1b1183/"
+          target="_blank"
+          className="text-neutral-500 italic"
+        >
+          <NavLinks name="linkedin" />
+        </Link>
+
+        <span className="text-neutral-400"> / </span>
+
+        <Link
+          href="https://twitter.com/NBK_dev"
+          target="_blank"
+          className="text-neutral-500 italic"
+        >
+          <NavLinks name="X" />
+        </Link>
+      </div>
+
+      <div className="space-x-4">
+        <a
+          onClick={() => copyFunc()}
+          className="text-neutral-500 italic cursor-pointer"
+        >
+          <NavLinks name="email" />
+        </a>
+        {/* todo */}
+        <a href="/resume.pdf" type="file" className="text-neutral-500 italic">
+          <NavLinks name="resume" />
+        </a>
+        <Link
+          href="https://cal.com/excelsior"
+          target="_blank"
+          className="text-neutral-500 italic"
+        >
+          <NavLinks name="book call" />
+        </Link>
+      </div>
+    </footer>
   );
 };
