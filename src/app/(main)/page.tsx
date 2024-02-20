@@ -1,8 +1,8 @@
-import React from 'react'
-import { Intro } from '@/components/comps/intro'
-import ProjectGrid from '@/components/comps/projectGrid'
-import {ProjectList} from '@/components/comps/projectList'
-import { Separator } from '@/components/ui/separator';
+import React from "react";
+import { Intro } from "@/components/comps/intro";
+import ProjectGrid from "@/components/comps/projectGrid";
+import { ProjectList } from "@/components/comps/projectList";
+import { Separator } from "@/components/ui/separator";
 
 const projects = [
   {
@@ -13,8 +13,7 @@ const projects = [
   {
     title: "bookworm haven",
     link: "https://github.com/NBK-01/Bookworm-Haven",
-    sub:
-      "an platform where you can discuss, review, and search for novels",
+    sub: "a platform where you can discuss, review, and search for novels",
   },
   {
     title: "prbly alpha",
@@ -29,40 +28,38 @@ const projects = [
   {
     title: "trail finder",
     link: "https://jyothybaby.github.io/Trail-Finder/",
-    sub:
-      "search for hiking trails within a selected radius relevant to your location ",
+    sub: "search for hiking trails within a selected radius relevant to your location ",
   },
   {
     title: "employee manager sys",
     link: "https://github.com/NBK-01/Employee-Management-System",
-    sub:
-      "a terminal based CMS app which runs using mainly Inquirer and SQL",
+    sub: "a terminal based CMS app which runs using mainly Inquirer and SQL",
   },
 ];
-
 
 const Main = () => {
   return (
     <>
-      <Intro/>
+      <Intro />
 
       <div className="pb-14 flex flex-col">
         <h1 className="text-neutral-700 md:text-2xl text-xl ml-2">
-        <span className="text-emerald-700 text-base"> (recent) </span> projects
+          <span className="text-emerald-700 text-base"> (recent) </span>{" "}
+          projects
         </h1>
-        <ProjectGrid/>
+        <ProjectGrid />
       </div>
 
       <div className="pb-28 flex flex-col">
-          <h1 className="text-neutral-700 text-2xl ml-2">
-            <span className="text-emerald-700 text-base"> (more) </span> projects 
-          </h1>
-          <ProjectList items={projects}/>
+        <h1 className="text-neutral-700 text-2xl ml-2">
+          <span className="text-emerald-700 text-base"> (more) </span> projects
+        </h1>
+        <ProjectList items={projects} />
       </div>
 
-    <Separator/>
+      <Separator />
     </>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
